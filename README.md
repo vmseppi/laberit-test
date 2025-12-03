@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# User Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación de gestión de usuarios con React, TypeScript y Vite.
 
-Currently, two official plugins are available:
+## 📋 Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js 18 o superior
+- npm
 
-## React Compiler
+## 🚀 Instalación Rápida
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Paso 1: Instalar dependencias
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Si hay errores, usa:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install --legacy-peer-deps
 ```
+
+### Paso 2: Configurar API Key (Importante)
+
+Para evitar errores de CORS, necesitas obtener una API key de ReqRes:
+
+1. Ve a https://app.reqres.in/api-keys
+2. Crea una cuenta o inicia sesión
+3. Genera una nueva API key
+4. Crea un archivo `.env` en la raíz del proyecto
+5. Agrega tu API key al archivo:
+
+```bash
+VITE_REQRES_API_KEY=tu_api_key_aqui
+```
+
+**Ejemplo de archivo `.env`:**
+```
+VITE_REQRES_API_KEY=reqres_abc123xyz456
+```
+
+### Paso 3: Ejecutar el proyecto
+
+```bash
+npm run dev
+```
+
+Abre tu navegador en: `http://localhost:5173`
+
+## 📜 Comandos
+
+```bash
+npm run dev      # Iniciar servidor de desarrollo
+npm run build    # Crear build de producción
+npm test         # Ejecutar tests
+npm run lint     # Verificar código
+```
+
+## 🐛 Problemas Comunes
+
+**Error de dependencias:**
+```bash
+npm install --legacy-peer-deps
+```
+
+**Puerto ocupado:**
+Vite usará automáticamente otro puerto.
+
+## 📝 Notas
+
+- La API de ReqRes es de prueba (no persiste cambios)
+- El proyecto usa proxy y API key para evitar errores de CORS
+- **Importante:** El archivo `.env` con tu API key NO debe subirse al repositorio (ya está en .gitignore)
+- Si no configuras la API key, el proyecto puede tener errores de CORS
+
+---
+

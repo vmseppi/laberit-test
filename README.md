@@ -7,6 +7,14 @@ Aplicación de gestión de usuarios con React, TypeScript y Vite.
 - Node.js 18 o superior
 - npm
 
+## 📥 Clonar el Repositorio
+
+Para clonar este repositorio, usa HTTPS:
+
+```bash
+git clone https://github.com/vmseppi/laberit-test.git
+```
+
 ## 🚀 Instalación Rápida
 
 ### Paso 1: Instalar dependencias

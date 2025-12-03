@@ -1,4 +1,4 @@
-import type { User, CreateUserRequest, CreateUserResponse, UsersResponse } from '../types';
+import type { User, CreateUserRequest, CreateUserResponse, UsersResponse, UpdateUserRequest, UpdateUserResponse } from '../types';
 
 const BASE_URL = '/api'; 
 const API_KEY = import.meta.env.VITE_REQRES_API_KEY; 
@@ -56,5 +56,61 @@ export const api = {
     }
 
     return response.json();
+  },
+
+  // Update a user (PUT)
+  updateUser: async (id: number, userData: UpdateUserRequest): Promise<UpdateUserResponse> => {
+    const response = await fetch(`${BASE_URL}/users/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': API_KEY,
+      },
+      body: JSON.stringify(userData),
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      console.error('Error updating user', response.status, text);
+      throw new Error('Error updating user');
+    }
+
+    return response.json();
+  },
+
+  // Update a user (PATCH)
+  patchUser: async (id: number, userData: UpdateUserRequest): Promise<UpdateUserResponse> => {
+    const response = await fetch(`${BASE_URL}/users/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': API_KEY,
+      },
+      body: JSON.stringify(userData),
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      console.error('Error patching user', response.status, text);
+      throw new Error('Error patching user');
+    }
+
+    return response.json();
+  },
+
+  // Delete a user
+  deleteUser: async (id: number): Promise<void> => {
+    const response = await fetch(`${BASE_URL}/users/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'x-api-key': API_KEY,
+      },
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      console.error('Error deleting user', response.status, text);
+      throw new Error('Error deleting user');
+    }
   },
 };

@@ -26,3 +26,14 @@ export interface UsersResponse {
   data: User[];
 }
 
+export interface UpdateUserRequest {
+  name?: string;
+  job?: string;
+}
+
+export interface UpdateUserResponse {
+  name?: string;
+  job?: string;
+  updatedAt: string;
+}
+

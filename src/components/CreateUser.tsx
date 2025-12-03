@@ -82,7 +82,7 @@ export default function CreateUser() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all text-sm sm:text-base"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all text-sm sm:text-base text-gray-800 bg-white"
                 placeholder="Ingresa el nombre"
               />
             </div>
@@ -98,7 +98,7 @@ export default function CreateUser() {
                 value={formData.job}
                 onChange={handleChange}
                 required
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all text-sm sm:text-base"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all text-sm sm:text-base text-gray-800 bg-white"
                 placeholder="Ingresa el trabajo"
               />
             </div>
@@ -107,7 +107,7 @@ export default function CreateUser() {
               <button
                 type="button"
                 onClick={handleBack}
-                className="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-md transition-colors text-sm sm:text-base"
+                className="flex-1 bg-gray-200 hover:bg-gray-300 text-black font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-md transition-colors text-sm sm:text-base"
               >
                 Cancelar
               </button>

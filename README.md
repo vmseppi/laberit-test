@@ -79,7 +79,7 @@ Vite usará automáticamente otro puerto.
 
 - La API de ReqRes es de prueba (no persiste cambios)
 - El proyecto usa proxy y API key para evitar errores de CORS
-- **Importante:** El archivo `.env` con tu API key NO debe subirse al repositorio (ya está en .gitignore)
+- **Importante:** El archivo `.env` debe tener una API key generada por cada usuario que descargue el repo por motivos de seguridad
 - Si no configuras la API key, el proyecto puede tener errores de CORS
 
 ---

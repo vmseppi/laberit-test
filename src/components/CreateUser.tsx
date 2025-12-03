@@ -53,9 +53,9 @@ export default function CreateUser() {
           ← Volver a la lista
         </button>
 
-        <div className="bg-white rounded-xl shadow-2xl p-4 sm:p-6 md:p-8 w-full">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 sm:mb-8 text-center">
-            Crear Nuevo Usuario
+        <div className="bg-white rounded-xl shadow-2xl p-4 sm:p-6 md:p-8 w-full backdrop-blur-sm bg-opacity-95">
+          <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6 sm:mb-8 text-center">
+            ✨ Crear Nuevo Usuario
           </h1>
 
           {success && (

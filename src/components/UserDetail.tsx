@@ -156,14 +156,17 @@ export default function UserDetail() {
           </div>
         )}
 
-        <div className="bg-white rounded-xl shadow-2xl p-4 sm:p-6 md:p-8 w-full">
+        <div className="bg-white rounded-xl shadow-2xl p-4 sm:p-6 md:p-8 w-full backdrop-blur-sm bg-opacity-95">
           <div className="flex flex-col items-center mb-6 sm:mb-8">
-            <img
-              src={user.avatar}
-              alt={`${user.first_name} ${user.last_name}`}
-              className="w-24 h-24 sm:w-32 sm:h-32 rounded-full mb-4 sm:mb-6 border-4 border-indigo-200"
-            />
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center">
+            <div className="relative group">
+              <img
+                src={user.avatar}
+                alt={`${user.first_name} ${user.last_name}`}
+                className="w-24 h-24 sm:w-32 sm:h-32 rounded-full mb-4 sm:mb-6 border-4 border-indigo-200 group-hover:border-indigo-400 transition-all duration-300 shadow-lg"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            </div>
+            <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent text-center">
               {user.first_name} {user.last_name}
             </h1>
           </div>
